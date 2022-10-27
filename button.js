@@ -5,7 +5,7 @@ var x =  document.querySelector('.h1').value;
 var y = document.querySelector('.h2').value;
 var mach = 0
 var nmanText ="";
-var longestMach = 1
+var longestMach = 0
 var nman = ''
 
 
