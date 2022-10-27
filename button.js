@@ -1,28 +1,42 @@
-document.querySelector('button').onclick = myClick
+myClick();document.querySelector('button').onclick = myClick
 
 function myClick(){
 var x =  document.querySelector('.h1').value;
 var y = document.querySelector('.h2').value;
-var mach = 0;
-var nmanText =" ";
+var mach = 0
+var nmanText ="";
+var longestMach = 1
+var nman = ''
 
-for(let i=0;i<=x.length;i++)
-{
+
+for(let i=0;i<=x.length;i++){
+   
     for(let j=0;j<y.length;j++){
-    
-       if(x[i]==y[j]){ 
+       mach=0  
         
-        nmanText=nmanText+x[i];
-        mach++;
-    }
+    
+       while(x[i+ mach]==y[j+mach]){ 
+       
+        nman+=x[i+mach];
+ mach++;
+     
+    };
+
+if(mach >longestMach){
+    nmanText=''
+     nmanText+=nman
+    longestMach+=mach
 }
- 
-} if(mach == 0){
-    document.querySelector('.out').innerHTML = ('Nman chen')
-    console.log('Nman chen');
-} else {
+
+
+}
+if(longestMach==0){
+document.querySelector('.out').innerHTML = nmanText 
+console.log('nman chen')
+}else{
     document.querySelector('.out').innerHTML = nmanText
-    console.log(nmanText);
-}
-}
+    console.log(nmanText);}
+}}
+
+
 myClick();
